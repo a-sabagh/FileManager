@@ -1,0 +1,36 @@
+.file{
+    font-size: 100px;
+}
+a{
+    display:inline-block;
+    text-align: center;
+    width: 100px;
+}
+span{
+    text-align: center;
+    font-size: 15px;
+}
+.container-file:nth-child(2n){
+    background: #e1e1e1;
+}
+.container-file{
+    padding: 15px 25px;
+    position: relative;
+}
+.file-action{
+    position: absolute;
+    font-size: 20px;
+}
+.cfile{
+    top: 10%;
+}
+.rfile{
+    top: 40%;
+}
+.dfile{
+    top: 70%;
+}
+.fname{
+    position: relative;
+    bottom: -10px;
+}

@@ -1,0 +1,71 @@
+/* *************** R E S E T  *************** */
+ *, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td {
+    margin:0;
+    padding:0
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+    padding: 0;
+    margin: 0;
+}
+fieldset, img {
+    border:0
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style:normal;
+    font-weight:normal
+}
+ol, ul, li {
+    list-style:none
+}
+caption, th {
+    text-align:left
+}
+q:before, q:after {
+    content:''
+}
+* {
+    outline: none;
+}
+strong {
+    font-weight: bold
+}
+em {
+    font-style: italic
+}
+a img {
+    border:none
+}
+/*-General Styles------------------------------------------*/
+a:hover , a:visited , a:focus , a:active{
+    outline: none !important;
+    text-decoration: none !important;
+}
+a, a:visited {
+    text-decoration:none;
+    color: #000;
+}
+a:hover {
+    text-decoration:none;
+}
+a:active {
+    border: none;
+    border: 0;
+}
+p {
+    line-height:18px;
+    direction: rtl;
+}
+p a, p a:visited {
+    outline:none;
+    text-decoration:none;
+    color:#000;
+    background-color:#FFFFFF;
+}
+button {
+  overflow: visible;
+}
+hr{
+    margin: 15px 0;
+}
