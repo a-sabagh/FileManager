@@ -36,8 +36,21 @@
                 }
             }
             function deletefile(filename) {
-                if (window.confirm("Do you want to delete fle")) {
+                if (window.confirm("Do you want to delete file?")) {
                     window.location = "deletefile.php?dir=<?php echo $dir; ?>&fileName=" + filename;
+                }
+            }
+            function copydir(dirname){
+                var copypath = prompt("please enter the copy path");
+                if(copypath === ''){
+                    alert("please fill copy path");
+                }else{
+                    window.location = "cpdir.php?dir=<?php echo $dir; ?>&copypath=" + copypath + "&dirName=" + dirname;
+                }
+            }
+            function deletedir(dirname){
+                if(window.confirm("Do you want to delete directory")){
+                    window.location = "rmdir.php?dir=<?php echo $dir;?>&dirName=" + dirname;
                 }
             }
         </script>
@@ -78,11 +91,13 @@
                         <div class="file fa fa-folder-o"></div>
                         <span><?php echo basename($file); ?></span>
                     </a>
+                    <a href="#" class="file-action cfile" title="copy directory" onclick="copydir('<?php echo basename($file); ?>')"><i class="fa fa-copy"></i></a>
+                    <a href="#" class="file-action rfile" title="rename directory" onclick="renamefile('<?php echo basename($file); ?>')"><i class="fa fa-pencil-square"></i></a>
+                    <a href="#" class="file-action dfile" title="delete directory" onclick="deletedir('<?php echo basename($file); ?>')"><i class="fa fa-trash"></i></a> 
                 </div><!--.container-file-->
                 <?php
             }
         }
         ?>
-
     </body>
 </html>
