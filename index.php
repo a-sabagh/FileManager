@@ -65,13 +65,13 @@
         </script>
     </head>
     <body>
-        <a href="<?php echo (dirname($dir) !== '.') ? "?dir=" . dirname($dir) : '#'; ?>" title="backWard">
+        <a href="<?php echo (dirname($dir) !== '.') ? "?dir=" . dirname($dir) : '#'; ?>" title="‌parent directory">
             <div class="file fa fa-reply"></div>
         </a>
-        <a href="" onclick="goBack()" title="">
+        <a href="" onclick="goBack()" title="backWard">
             <div class="file fa fa-arrow-left"></div>
         </a>
-        <a href="" onclick="goForward()" title="">
+        <a href="" onclick="goForward()" title="forWard">
             <div class="file fa fa-arrow-right"></div>
         </a>
         <a href="#" title="make directory" onclick="makeDir()" >
