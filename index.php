@@ -40,23 +40,23 @@
                     window.location = "deletefile.php?dir=<?php echo $dir; ?>&fileName=" + filename;
                 }
             }
-            function copydir(dirname){
+            function copydir(dirname) {
                 var copypath = prompt("please enter the copy path");
-                if(copypath === ''){
+                if (copypath === '') {
                     alert("please fill copy path");
-                }else{
+                } else {
                     window.location = "cpdir.php?dir=<?php echo $dir; ?>&copypath=" + copypath + "&dirName=" + dirname;
                 }
             }
-            function deletedir(dirname){
-                if(window.confirm("Do you want to delete directory")){
-                    window.location = "rmdir.php?dir=<?php echo $dir;?>&dirName=" + dirname;
+            function deletedir(dirname) {
+                if (window.confirm("Do you want to delete directory")) {
+                    window.location = "rmdir.php?dir=<?php echo $dir; ?>&dirName=" + dirname;
                 }
             }
         </script>
     </head>
     <body>
-        <a href="?dir=<?php echo dirname($dir); ?>" title="backWard">
+        <a href="<?php echo (dirname($dir) !== '.') ? "?dir=" . dirname($dir) : '#'; ?>" title="backWard">
             <div class="file fa fa-arrow-circle-up"></div>
         </a>
         <a href="" title="">
@@ -68,6 +68,10 @@
         <a href="#" title="make directory" onclick="makeDir()" >
             <div class="file fa fa-plus-circle"></div>
         </a>
+        <form action="uploadfile.php?dir=<?php echo $dir; ?>" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploaded_file" >
+            <input type="submit" name="upload_file" value="upload">
+        </form>
         <?php
         $filelist = glob($dir . '/*');
         foreach ($filelist as $file) {
