@@ -22,6 +22,13 @@
                 }
                 window.location = "mkdir.php?dir=<?php echo $dir; ?>&dirName=" + dirName;
             }
+            function makefile(){
+                var filename = prompt("please enter your file name");
+                if(filename == ''){
+                    filename = 'newfile';
+                }
+                window.location = "makefile.php?dir=<?php echo $dir; ?>&fileName=" + filename;
+            }
             function copyfile(filename) {
                 var copypath = prompt("please enter your path to copy:");
                 if (copypath === '') {
@@ -59,16 +66,19 @@
     </head>
     <body>
         <a href="<?php echo (dirname($dir) !== '.') ? "?dir=" . dirname($dir) : '#'; ?>" title="backWard">
-            <div class="file fa fa-arrow-circle-up"></div>
+            <div class="file fa fa-reply"></div>
         </a>
         <a href="" onclick="goBack()" title="">
-            <div class="file fa fa-arrow-circle-left"></div>
+            <div class="file fa fa-arrow-left"></div>
         </a>
         <a href="" onclick="goForward()" title="">
-            <div class="file fa fa-arrow-circle-right"></div>
+            <div class="file fa fa-arrow-right"></div>
         </a>
         <a href="#" title="make directory" onclick="makeDir()" >
             <div class="file fa fa-plus-circle"></div>
+        </a>
+        <a href="#" title="make file" onclick="makefile()" >
+            <div class="file fa fa-plus"></div>
         </a>
         <form action="uploadfile.php?dir=<?php echo $dir; ?>" method="post" enctype="multipart/form-data">
             <input type="file" name="uploaded_file" >
@@ -82,7 +92,7 @@
                 ?>
                 <div class="container-file">
                     <a href="#" title="" >
-                        <div class="file fa fa-file-code-o"></div>
+                        <div class="file fa fa-file-text-o"></div>
                         <span class="fname"><?php echo basename($file); ?></span>
                     </a>
                     <a href="#" class="file-action cfile" title="copy file" onclick="copyfile('<?php echo basename($file); ?>')"><i class="fa fa-copy"></i></a>
