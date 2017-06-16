@@ -13,6 +13,8 @@
         }
         ?>
         <script>
+            function goBack(){ window.history.back(); }
+            function goForward(){ window.history.forward(); }
             function makeDir() {
                 var dirName = prompt("please enter your folder name:");
                 if (dirName === '') {
@@ -59,10 +61,10 @@
         <a href="<?php echo (dirname($dir) !== '.') ? "?dir=" . dirname($dir) : '#'; ?>" title="backWard">
             <div class="file fa fa-arrow-circle-up"></div>
         </a>
-        <a href="" title="">
+        <a href="" onclick="goBack()" title="">
             <div class="file fa fa-arrow-circle-left"></div>
         </a>
-        <a href="" title="">
+        <a href="" onclick="goForward()" title="">
             <div class="file fa fa-arrow-circle-right"></div>
         </a>
         <a href="#" title="make directory" onclick="makeDir()" >
