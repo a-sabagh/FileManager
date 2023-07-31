@@ -35,6 +35,6 @@ if (isset($_POST['upload_file'])) {
     } else {
         move_uploaded_file($file_temp , "{$dir}/{$file_name}");
     }
-    $redirect = dirname($_SERVER[PHP_SELF]) . "/index.php?dir={$dir}";
+    $redirect = dirname($_SERVER['PHP_SELF']) . "/index.php?dir={$dir}";
     header("Location:{$redirect}");
 }

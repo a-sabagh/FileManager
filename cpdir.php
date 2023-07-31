@@ -41,6 +41,6 @@ if (isset($_GET['dir']) && isset($_GET['dirName']) && isset($_GET['copypath'])) 
     }
 
     recursive_cpdir($dirpath, $copypath);
-    $redirect = dirname($_SERVER[PHP_SELF]) . "/index.php?dir={$dir}";
+    $redirect = dirname($_SERVER['PHP_SELF']) . "/index.php?dir={$dir}";
     header("Location:{$redirect}");
 }
