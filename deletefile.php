@@ -4,6 +4,6 @@ if(isset($_GET['dir']) && isset($_GET['fileName'])){
     $filename = $_GET['fileName'];
     $removepath = "{$dir}/{$filename}";
     unlink($removepath);
-    $redirect = dirname($_SERVER[PHP_SELF]) . "/index.php?dir={$dir}";
+    $redirect = dirname($_SERVER['PHP_SELF']) . "/index.php?dir={$dir}";
     header("Location:{$redirect}");
 }

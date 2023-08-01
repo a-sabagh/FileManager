@@ -39,6 +39,6 @@ if (isset($_GET['dir']) && isset($_GET['dirName'])) {
         }//directory not empty
     }//recursive_rmdir function
     recursive_rmdir($dirpath);
-    $redirect = dirname($_SERVER[PHP_SELF]) . "/index.php?dir={$dir}";
+    $redirect = dirname($_SERVER['PHP_SELF']) . "/index.php?dir={$dir}";
     header("Location:{$redirect}");
 }

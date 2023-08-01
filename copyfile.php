@@ -6,6 +6,6 @@ if(isset($_GET['dir']) && isset($_GET['fileName']) && $_GET['path']){
     $filepath = "{$dir}/{$filename}";
     $copypath = "{$path}/{$filename}"; 
     copy($filepath, $copypath);
-    $redirect = dirname($_SERVER[PHP_SELF]) . "/index.php?dir={$dir}";
+    $redirect = dirname($_SERVER['PHP_SELF']) . "/index.php?dir={$dir}";
     header("Location:{$redirect}");
 }
