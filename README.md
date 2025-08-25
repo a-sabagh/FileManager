@@ -18,7 +18,9 @@ You can set up the FileManager using either **XAMPP** or **PHP's built-in server
 
 ## Option 1: Using XAMPP :)
 
+```bash
 git clone https://github.com/a-sabagh/FileManager.git
+```
 
 ### Option 2: Using PHP's Built-in Server
 
